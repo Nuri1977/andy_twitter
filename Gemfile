@@ -70,3 +70,5 @@ gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'gravatar_image_tag', '~> 1.2'
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.7', '>= 4.7.1'
+#Font-Awesome web fonts and stylesheets as a Rails engine for use with the asset pipeline.
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'

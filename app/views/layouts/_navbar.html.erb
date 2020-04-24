@@ -51,9 +51,11 @@
             <strong>Sign up</strong>
           </a>
           <a class="button is-link is-outlined is-inverted is-rounded">
-            Log in
+            <i class="fa fa-user"> Log in</i>
           </a>
-          <%= link_to "New Tweet", new_tweet_path , class: "button is-link is-outlined is-inverted is-rounded"%>
+          <%= link_to new_tweet_path , class: "button is-link is-outlined is-inverted is-rounded" do %>
+            <i class="fa fa-twitter"> New Tweet</i>  
+          <% end %>
         </div>
       </div>
     </div>
