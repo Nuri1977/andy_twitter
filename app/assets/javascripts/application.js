@@ -13,3 +13,29 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener('DOMContentLoaded', () => {
+  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+    $notification = $delete.parentNode;
+
+    $delete.addEventListener('click', () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+});
+
+document.addEventListener("turbolinks:load",() => {
+  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="popover"]').popover()
+})
+
+$(function () {
+
+  setTimeout(function () {
+             if ($(".alert").is(":visible")){
+                  //you may add animate.css class for fancy fadeout
+                 $(".alert").fadeOut("slow");
+             }
+         }, 3000)
+ 
+ });
