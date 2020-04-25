@@ -47,12 +47,18 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-link is-outlined is-inverted is-rounded">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-link is-outlined is-inverted is-rounded">
-            <i class="fa fa-user"> Log in</i>
-          </a>
+          <%= link_to edit_user_registration_path(current_user) , class: "button is-link is-outlined is-inverted is-rounded" do %>
+            <i class="fa fa-pencil"> Edit Profile</i>  
+          <% end %>
+          <%= link_to new_user_registration_path , class: "button is-link is-outlined is-inverted is-rounded" do %>
+            <i class="fa fa-register"> Sign Up</i>  
+          <% end %>
+          <%= link_to new_user_session_path , class: "button is-link is-outlined is-inverted is-rounded" do %>
+            <i class="fa fa-user"> Log in</i>  
+          <% end %>
+          <%= link_to destroy_user_session_path , method: :delete, class: "button is-link is-outlined is-inverted is-rounded" do %>
+            <i class="fa fa-user"> Log out</i>  
+          <% end %>
           <%= link_to new_tweet_path , class: "button is-link is-outlined is-inverted is-rounded" do %>
             <i class="fa fa-twitter"> New Tweet</i>  
           <% end %>
