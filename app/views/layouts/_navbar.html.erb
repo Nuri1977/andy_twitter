@@ -1,7 +1,7 @@
 <nav class="navbar is-info" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <%= link_to root_path, class: "navbar-item" do %>
-      <span class="title is-4">Twitter</span>
+      <span class="title is-4"><i class="fa fa-twitter"> Twitter</i> </span>
     <% end %>
 
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -47,20 +47,23 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <%= link_to edit_user_registration_path(current_user) , class: "button is-link is-outlined is-inverted is-rounded" do %>
-            <i class="fa fa-pencil"> Edit Profile</i>  
-          <% end %>
-          <%= link_to new_user_registration_path , class: "button is-link is-outlined is-inverted is-rounded" do %>
-            <i class="fa fa-register"> Sign Up</i>  
-          <% end %>
-          <%= link_to new_user_session_path , class: "button is-link is-outlined is-inverted is-rounded" do %>
-            <i class="fa fa-user"> Log in</i>  
-          <% end %>
-          <%= link_to destroy_user_session_path , method: :delete, class: "button is-link is-outlined is-inverted is-rounded" do %>
-            <i class="fa fa-user"> Log out</i>  
-          <% end %>
-          <%= link_to new_tweet_path , class: "button is-link is-outlined is-inverted is-rounded" do %>
-            <i class="fa fa-twitter"> New Tweet</i>  
+          <% if user_signed_in? %>
+            <%= link_to new_tweet_path , class: "button is-link is-outlined is-inverted is-rounded" do %>
+              <i class="fa fa-twitter"> New Tweet</i>  
+            <% end %>
+            <%= link_to edit_user_registration_path(current_user) , class: "button is-link is-outlined is-inverted is-rounded" do %>
+              <i class="fa fa-pencil"> <%= current_user.name %>'s profile</i>  
+            <% end %>
+            <%= link_to destroy_user_session_path , method: :delete, class: "button is-link is-outlined is-inverted is-rounded" do %>
+              <i class="fa fa-user"> Log out</i>  
+            <% end %>
+          <% else %>
+            <%= link_to new_user_registration_path , class: "button is-link is-outlined is-inverted is-rounded" do %>
+              <i class="fa fa-register"> Sign Up</i>  
+            <% end %>
+            <%= link_to new_user_session_path , class: "button is-link is-outlined is-inverted is-rounded" do %>
+              <i class="fa fa-user"> Log in</i>  
+            <% end %>
           <% end %>
         </div>
       </div>
