@@ -1,12 +1,14 @@
 <div class="column is-half border">
-  <article class="media box">
-    <figure class="image is-64x64">
-      <img src="https://bulma.io/images/placeholders/64x64.png">
-    </figure>
-    <div class="media-content">
-      <%= render 'form' %>
-    </div>
-  </article>
+  <% if user_signed_in? %>
+    <article class="media box">
+      <figure class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/64x64.png">
+      </figure>
+      <div class="media-content">
+        <%= render 'form' %>
+      </div>
+    </article>
+  <% end %>
 
   <% @tweets.each do |tweet| %>
     <div class="box">
