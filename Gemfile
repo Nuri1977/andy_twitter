@@ -52,7 +52,7 @@ group :development do
   gem 'guard', '~> 2.16', '>= 2.16.2'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
   # Provides a better error page for Rails and other Rack apps
-  gem 'better_errors', '~> 2.6'
+  gem 'better_errors', '~> 2.8'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
